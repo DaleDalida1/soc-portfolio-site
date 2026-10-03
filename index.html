@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dale Dalida — SOC Analyst L1 | U.S. Navy Veteran</title>
+<meta name="description" content="Dale Dalida — entry-level SOC Analyst candidate in the DFW area. Azure Sentinel honeynet, phishing analysis, incident response, and 10 years of U.S. Navy triage experience.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1114'/%3E%3Cpath d='M9 7H6v18h3M23 7h3v18h-3' stroke='%2386d9a8' stroke-width='2.5' fill='none'/%3E%3Cpath d='M9 17h4l2-5 3 9 2-4h3' stroke='%23e8b64c' stroke-width='2' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="statusbar" role="status">
+  <div class="wrap statusbar__row">
+    <span class="status-dot" aria-hidden="true"></span>
+    <span><b>STATUS:</b> Available<span class="hide-sm"> — SOC Analyst L1 / Junior SOC</span></span>
+    <span class="sep hide-sm">|</span>
+    <span class="hide-sm">Anna, TX · DFW on-site, hybrid, or remote</span>
+    <span class="statusbar__clock mono" id="clock" aria-label="Local time in Central Time"></span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap nav__row">
+    <a href="#top" class="brand" aria-label="Dale Dalida, home">
+      <svg class="logo" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M9 6H5v20h4M23 6h4v20h-4" stroke="currentColor" stroke-width="2.2"/>
+        <path class="logo__pulse" d="M8 17h4.5l2-5.5 3 10 2-4.5H24" stroke="var(--amber)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <span class="mono">dale.dalida</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="#cases">Case files</a></li>
+        <li><a href="#training">Training log</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#service">Background</a></li>
+        <li><a href="#contact" class="nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow mono">// analyst profile · tier 1 ready</p>
+      <h1 class="hero__title">Dale Dalida</h1>
+      <p class="hero__role mono">SOC Analyst L1 &nbsp;·&nbsp; Security Monitoring &nbsp;·&nbsp; Incident Response</p>
+      <p class="hero__lede">Ten years as a U.S. Navy Hospital Corpsman taught me to triage under pressure, document everything, and escalate at the right moment. Now I do the same thing with alerts. Cybersecurity graduate (BAT, Collin College, 2026) with hands-on work in Microsoft Sentinel, KQL, phishing analysis, and threat hunting.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="assets/Dale_Dalida_SOC_Analyst_Resume.pdf" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14" /></svg>
+          Download resume
+        </a>
+        <a class="btn" href="https://github.com/DaleDalida1" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/dale-dalida-b32309ab" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://tryhackme.com/p/MiniBambino" target="_blank" rel="noopener">TryHackMe</a>
+      </div>
+    </div>
+
+    <aside class="console" aria-label="Example threat-hunting query">
+      <div class="console__bar">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="mono">sentinel · logs · brute-force-hunt.kql</span>
+      </div>
+<pre class="console__body mono" aria-hidden="false"><code><span class="c">// Find IPs hammering logons (T1110)</span>
+<span class="k">SecurityEvent</span>
+| <span class="k">where</span> EventID == <span class="n">4625</span>
+| <span class="k">summarize</span> FailedLogons = <span class="f">count</span>()
+    <span class="k">by</span> IpAddress, <span class="f">bin</span>(TimeGenerated, <span class="n">1h</span>)
+| <span class="k">where</span> FailedLogons > <span class="n">20</span>
+| <span class="k">order by</span> FailedLogons <span class="k">desc</span></code></pre>
+      <div class="console__out mono">
+        <div class="row"><span>triage</span><span class="tag tag--amber">brute force · T1110</span></div>
+        <div class="row"><span>action</span><span>enrich IP → check success 4624 → escalate</span></div>
+        <div class="row"><span>analyst</span><span class="typed" id="typed">D. Dalida</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <ul class="signals" aria-label="Hiring signals">
+      <li><span class="signals__k mono">EDUCATION</span><span class="signals__v">B.A.T. Cybersecurity</span><span class="signals__s">Collin College · May 2026</span></li>
+      <li><span class="signals__k mono">SERVICE</span><span class="signals__v">U.S. Navy HM2 (E-5)</span><span class="signals__s">2009–2018 · Honorable</span></li>
+      <li><span class="signals__k mono">CLEARANCE</span><span class="signals__v">Former Secret</span><span class="signals__s">Held during military service</span></li>
+      <li><span class="signals__k mono">IN PROGRESS</span><span class="signals__v">CompTIA Security+</span><span class="signals__s">SY0-701 · studying now</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CASE FILES -->
+<section class="section" id="cases">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow mono">01 / case files</p>
+      <h2 class="section__title">Work I can walk you through</h2>
+      <p class="section__intro">Each project below is documented on GitHub or in my resume. I'm happy to screen-share any of them in an interview.</p>
+    </header>
+
+    <!-- Featured: Azure SOC -->
+    <article class="case case--feature" aria-labelledby="azure-title">
+      <div class="case__meta mono">
+        <span class="tag">CASE-001</span>
+        <span class="tag tag--green">personal lab</span>
+        <span>2024</span>
+      </div>
+      <h3 id="azure-title" class="case__title">Azure SOC &amp; Honeynet with Microsoft Sentinel</h3>
+      <p class="case__lede">I built a honeynet in Microsoft Azure: three internet-exposed VMs (two Windows, one Linux) sending Windows Security Events and Linux Syslog to a Log Analytics workspace monitored by Sentinel. I watched real attackers hit it for 24 hours, hardened the environment, then measured again for 48 hours.</p>
+
+      <div class="case__grid">
+        <figure class="diagram" aria-labelledby="diagram-cap">
+          <svg viewBox="0 0 570 280" role="img" aria-label="Architecture: internet attackers reach two Windows VMs and one Linux VM protected by NSGs; logs flow to Log Analytics and Microsoft Sentinel, alongside Key Vault and Storage.">
+            <defs>
+              <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--red)"/></marker>
+              <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--green)"/></marker>
+            </defs>
+            <!-- internet -->
+            <g class="d-node">
+              <rect x="10" y="118" width="92" height="64" rx="6"/>
+              <text x="56" y="146" text-anchor="middle" class="d-t">INTERNET</text>
+              <text x="56" y="164" text-anchor="middle" class="d-s">attackers</text>
+            </g>
+            <!-- vnet -->
+            <rect x="150" y="30" width="170" height="240" rx="8" class="d-zone"/>
+            <text x="162" y="50" class="d-s">VNET · NSG + host firewall</text>
+            <g class="d-node"><rect x="172" y="66" width="126" height="44" rx="5"/><text x="235" y="93" text-anchor="middle" class="d-t">WIN-VM 01</text></g>
+            <g class="d-node"><rect x="172" y="128" width="126" height="44" rx="5"/><text x="235" y="155" text-anchor="middle" class="d-t">WIN-VM 02</text></g>
+            <g class="d-node"><rect x="172" y="190" width="126" height="44" rx="5"/><text x="235" y="217" text-anchor="middle" class="d-t">LINUX-VM</text></g>
+            <path class="d-attack" d="M102 140 C130 120 140 92 170 88" marker-end="url(#ah)"/>
+            <path class="d-attack" d="M102 150 H170" marker-end="url(#ah)"/>
+            <path class="d-attack" d="M102 160 C130 180 140 210 170 212" marker-end="url(#ah)"/>
+            <!-- law -->
+            <g class="d-node d-node--hl"><rect x="370" y="104" width="170" height="52" rx="6"/><text x="455" y="127" text-anchor="middle" class="d-t">LOG ANALYTICS</text><text x="455" y="144" text-anchor="middle" class="d-s">SecurityEvent · Syslog</text></g>
+            <g class="d-node d-node--amber"><rect x="370" y="30" width="170" height="48" rx="6"/><text x="455" y="59" text-anchor="middle" class="d-t">MICROSOFT SENTINEL</text></g>
+            <g class="d-node"><rect x="370" y="190" width="80" height="44" rx="5"/><text x="410" y="217" text-anchor="middle" class="d-s">Key Vault</text></g>
+            <g class="d-node"><rect x="460" y="190" width="80" height="44" rx="5"/><text x="500" y="217" text-anchor="middle" class="d-s">Storage</text></g>
+            <path class="d-log" d="M298 88 C330 88 340 122 368 124" marker-end="url(#ag)"/>
+            <path class="d-log" d="M298 150 H368" marker-end="url(#ag)" />
+            <path class="d-log" d="M298 212 C330 212 340 150 368 140" marker-end="url(#ag)"/>
+            <path class="d-log" d="M455 104 V80" marker-end="url(#ag)"/>
+            <path class="d-log" d="M410 190 V158 M500 190 V158"/>
+            <text x="455" y="256" text-anchor="middle" class="d-s">private endpoints (hardened)</text>
+          </svg>
+          <figcaption id="diagram-cap" class="mono">fig. 1 — lab architecture (my redraw)</figcaption>
+        </figure>
+
+        <div class="metrics">
+          <table>
+            <caption class="mono">Recorded counts · before vs. after hardening</caption>
+            <thead><tr><th scope="col">Table</th><th scope="col">Before <span>24 h</span></th><th scope="col">After <span>48 h</span></th></tr></thead>
+            <tbody>
+              <tr><th scope="row">SecurityIncident</th><td class="hot">195</td><td class="cool">0</td></tr>
+              <tr><th scope="row">SecurityAlert</th><td class="hot">10</td><td class="cool">0</td></tr>
+              <tr><th scope="row">Syslog (Linux)</th><td class="hot">7,381</td><td class="cool">11</td></tr>
+              <tr><th scope="row">Malicious flows</th><td class="hot">1</td><td class="cool">0</td></tr>
+              <tr><th scope="row">SecurityEvent (Win)</th><td>19,661</td><td>28,452</td></tr>
+            </tbody>
+          </table>
+          <p class="note"><b class="mono">Analyst note:</b> The windows were different lengths, so raw counts aren't a rate comparison. Windows events rose because they log all activity, not just malicious activity. Zero alerts and incidents after hardening is consistent with reduced exposure. I don't claim it proves cause.</p>
+        </div>
+      </div>
+
+      <ul class="chips" aria-label="Skills used">
+        <li>Microsoft Sentinel</li><li>Log Analytics</li><li>KQL</li><li>NSGs</li><li>Private endpoints</li><li>Key Vault</li><li>MITRE T1110</li>
+      </ul>
+      <a class="link mono" href="https://github.com/DaleDalida1/Azure-SOC" target="_blank" rel="noopener">view repo → github.com/DaleDalida1/Azure-SOC</a>
+    </article>
+
+    <div class="cases">
+      <article class="case">
+        <div class="case__meta mono"><span class="tag">CASE-002</span><span class="tag tag--green">build</span><span>2026</span></div>
+        <h3 class="case__title">Interactive Phishing Awareness Training</h3>
+        <p>A browser-based training module with three simulated phishing emails: a fake login alert, an executive gift-card request, and an IT password reset. Learners click the suspicious parts and get instant feedback on why each one is a red flag.</p>
+        <ul class="chips"><li>Social engineering</li><li>BEC indicators</li><li>HTML / CSS / JS</li></ul>
+        <a class="link mono" href="https://github.com/DaleDalida1/Cybersecurity-AwarenessTraining-phishing-" target="_blank" rel="noopener">view repo →</a>
+      </article>
+
+      <article class="case">
+        <div class="case__meta mono"><span class="tag">CASE-003</span><span class="tag">academic scenario</span><span>2026</span></div>
+        <h3 class="case__title">Incident Response &amp; SOC Investigation</h3>
+        <p>Investigated a simulated attack chain: spear-phishing, SMB exploitation, password spraying, lateral movement, and HTTPS exfiltration. Correlated Windows authentication events, mapped behavior to MITRE ATT&amp;CK, ranked containment actions, and wrote an escalation-ready summary.</p>
+        <ul class="chips"><li>NIST SP 800-61</li><li>MITRE ATT&amp;CK</li><li>Evidence preservation</li></ul>
+      </article>
+
+      <article class="case">
+        <div class="case__meta mono"><span class="tag">CASE-004</span><span class="tag">academic capstone</span><span>2026</span></div>
+        <h3 class="case__title">Threat Hunting Capstone</h3>
+        <p>Hunted for credential abuse, insider activity, lateral movement, and ransomware across a simulated hybrid-cloud environment, then turned the findings into detection-improvement recommendations, including responsible-AI guardrails for false positives and analyst oversight.</p>
+        <ul class="chips"><li>Hypothesis hunting</li><li>Detection engineering</li><li>AI governance</li></ul>
+      </article>
+
+      <article class="case">
+        <div class="case__meta mono"><span class="tag">CASE-005</span><span class="tag">academic project</span><span>2026</span></div>
+        <h3 class="case__title">Machine-Learning Phishing Detection</h3>
+        <p>Built and evaluated a Python Random Forest classifier on the UCI Phishing Websites dataset using a stratified 80/20 split. Reviewed accuracy, classification metrics, and the confusion matrix, and documented ethical and operational limits.</p>
+        <ul class="chips"><li>Python</li><li>scikit-learn</li><li>Model evaluation</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING LOG -->
+<section class="section section--alt" id="training">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow mono">02 / training log</p>
+      <h2 class="section__title">Hands-on reps on TryHackMe</h2>
+      <p class="section__intro">I use TryHackMe's blue-team labs and SOC Simulator to keep the triage muscle sharp between projects. The numbers below come from my public profile.</p>
+    </header>
+
+    <div class="thm">
+      <div class="thm__card">
+        <div class="thm__top">
+          <div>
+            <p class="mono thm__user">MiniBambino</p>
+            <p class="mono thm__lvl">level 8 · [0x8][HACKER] · silver league</p>
+          </div>
+          <span class="tag tag--green">top 10%</span>
+        </div>
+        <dl class="thm__stats">
+          <div><dt class="mono">rooms completed</dt><dd>38</dd></div>
+          <div><dt class="mono">badges</dt><dd>9</dd></div>
+          <div><dt class="mono">points</dt><dd>4,892</dd></div>
+          <div><dt class="mono">global rank</dt><dd>249,868</dd></div>
+        </dl>
+        <p class="thm__foot mono">snapshot · Oct 3, 2026 · member since Sep 2022</p>
+        <a class="btn btn--primary thm__btn" href="https://tryhackme.com/p/MiniBambino" target="_blank" rel="noopener">View live TryHackMe profile →</a>
+      </div>
+
+      <div class="thm__badges">
+        <h3 class="mono thm__h">badges earned</h3>
+        <ul class="badges">
+<li><img src="assets/thm/cyberdefenceframework.webp" alt="" width="64" height="64" loading="lazy"><span class="badge__n">Skilled Navigator</span><span class="badge__d">Finished the Eviction challenge</span></li>
+<li><img src="assets/thm/first-step-into-soc.webp" alt="" width="64" height="64" loading="lazy"><span class="badge__n">First Step into SOC</span><span class="badge__d">Emerging threats & SOC response</span></li>
+<li><img src="assets/thm/soc-apprentice.webp" alt="" width="64" height="64" loading="lazy"><span class="badge__n">SOC Apprentice</span><span class="badge__d">How a SOC team operates</span></li>
+<li><img src="assets/thm/soc-sim-first-alert-closed.webp" alt="" width="64" height="64" loading="lazy"><span class="badge__n">First Alert Closed</span><span class="badge__d">SOC Simulator</span></li>
+<li><img src="assets/thm/soc-sim-first-scenario-completed.webp" alt="" width="64" height="64" loading="lazy"><span class="badge__n">First Scenario Completed</span><span class="badge__d">SOC Simulator</span></li>
+<li><img src="assets/thm/soc-sim-100-percent-true-positive-rate.webp" alt="" width="64" height="64" loading="lazy"><span class="badge__n">100% True Positive Rate</span><span class="badge__d">SOC Simulator scenario</span></li>
+<li><img src="assets/thm/defensive-toolsmith.webp" alt="" width="64" height="64" loading="lazy"><span class="badge__n">Defensive Toolsmith</span><span class="badge__d">Essential SOC detection tools</span></li>
+<li><img src="assets/thm/phishing.webp" alt="" width="64" height="64" loading="lazy"><span class="badge__n">Phish Hunter</span><span class="badge__d">Phishing Analysis room series</span></li>
+<li><img src="assets/thm/league-bronze.webp" alt="" width="64" height="64" loading="lazy"><span class="badge__n">Bronze League</span><span class="badge__d">1st place finish</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rooms">
+      <h3 class="mono thm__h">38 completed rooms, grouped by SOC skill</h3>
+      <div class="rooms__grid">
+<details class="rooms__g" open><summary><span>SOC operations</span><span class="mono rooms__c">07</span></summary><ul><li>Junior Security Analyst Intro</li><li>SOC Role in Blue Team</li><li>SOC L1 Alert Triage</li><li>SOC L1 Alert Reporting</li><li>SOC Workbooks and Lookups</li><li>SOC Metrics and Objectives</li><li>Defensive Security Intro</li></ul></details>
+<details class="rooms__g" open><summary><span>SIEM, EDR &amp; SOAR</span><span class="mono rooms__c">05</span></summary><ul><li>Introduction to SIEM</li><li>Splunk: The Basics</li><li>Elastic Stack: The Basics</li><li>Introduction to EDR</li><li>Introduction to SOAR</li></ul></details>
+<details class="rooms__g" open><summary><span>Phishing analysis</span><span class="mono rooms__c">07</span></summary><ul><li>Phishing Analysis Fundamentals</li><li>Phishing Emails in Action</li><li>Phishing Analysis Tools</li><li>Phishing Prevention</li><li>The Greenholt Phish</li><li>Snapped Phish-ing Line</li><li>Humans as Attack Vectors</li></ul></details>
+<details class="rooms__g"><summary><span>Threat intel &amp; frameworks</span><span class="mono rooms__c">09</span></summary><ul><li>Intro to Cyber Threat Intel</li><li>MITRE</li><li>Pyramid of Pain</li><li>Cyber Kill Chain</li><li>Unified Kill Chain</li><li>Diamond Model</li><li>Eviction</li><li>Summit</li><li>Systems as Attack Vectors</li></ul></details>
+<details class="rooms__g"><summary><span>Network &amp; recon</span><span class="mono rooms__c">06</span></summary><ul><li>Nmap</li><li>Passive Reconnaissance</li><li>L2 MAC Flooding &amp; ARP Spoofing</li><li>Google Dorking</li><li>Introduction to Honeypots</li><li>Introductory Researching</li></ul></details>
+<details class="rooms__g"><summary><span>Offensive fundamentals</span><span class="mono rooms__c">04</span></summary><ul><li>Offensive Security Intro</li><li>Pentesting Fundamentals</li><li>Intro to IoT Pentesting</li><li>Android Hacking 101</li></ul></details>
+      </div>
+    </div>
+
+    <h3 class="mono thm__h thm__h--sp">investigation notes</h3>
+    <ol class="log">
+      <li class="log__item">
+        <div class="log__head mono"><span class="tag tag--amber">phishing</span><span>attachment analysis</span></div>
+        <h3>Malicious HTML attachment → redirect chain</h3>
+        <p>Identified a disguised attachment by its actual file contents rather than its name, pulled the hidden redirect URL out of the markup, reduced it to the registrable domain for blocking, and hashed the archive for IOC sharing.</p>
+        <p class="log__tools mono">file · grep · curl · sha256sum</p>
+      </li>
+      <li class="log__item">
+        <div class="log__head mono"><span class="tag tag--amber">network</span><span>DNS anomaly triage</span></div>
+        <h3>Possible DNS tunneling from a single host</h3>
+        <p>Worked through subdomain cardinality, query timing, and label entropy to separate tunneling from normal lookups, attributed traffic to the responsible process, and planned containment, keeping TLD vs. registered domain straight throughout.</p>
+        <p class="log__tools mono">DNS logs · entropy · process attribution</p>
+      </li>
+      <li class="log__item log__item--next">
+        <div class="log__head mono"><span class="tag tag--green">ongoing</span><span>study plan</span></div>
+        <h3>Security+ SY0-701 + SOC reps</h3>
+        <p>Six-week Security+ rotation that starts from my strengths (SIEM, log analysis, IR) and then targets security architecture. TryHackMe rooms run alongside it every week.</p>
+        <p class="log__tools mono">next: Security+ exam · more KQL write-ups</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- TOOLKIT -->
+<section class="section" id="toolkit">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow mono">03 / toolkit</p>
+      <h2 class="section__title">What I work with</h2>
+    </header>
+    <div class="kit">
+      <div class="kit__group"><h3 class="mono">Security operations</h3><p>Alert triage · log analysis · incident classification · escalation notes · case documentation · evidence preservation</p></div>
+      <div class="kit__group"><h3 class="mono">SIEM &amp; detection</h3><p>Microsoft Sentinel · Log Analytics · KQL · Microsoft Defender · Windows Security Events · Linux Syslog · IOC analysis</p></div>
+      <div class="kit__group"><h3 class="mono">Network &amp; endpoint</h3><p>Wireshark · packet capture · Nmap / NSE · TCP/IP · DNS · HTTP/S · SMB · Windows · Linux</p></div>
+      <div class="kit__group"><h3 class="mono">Cloud</h3><p>Azure VNets, NSGs, Key Vault, Storage, private endpoints · AWS/Azure IAM and CloudTrail concepts</p></div>
+      <div class="kit__group"><h3 class="mono">Frameworks</h3><p>MITRE ATT&amp;CK · NIST SP 800-61 · NIST CSF · ISO/IEC 27035 · HIPAA and PHI/PII handling</p></div>
+      <div class="kit__group"><h3 class="mono">Scripting &amp; data</h3><p>Python · KQL · Random Forest classification · security reporting · SOP writing</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="section section--alt" id="service">
+  <div class="wrap service">
+    <header class="section__head">
+      <p class="eyebrow mono">04 / background</p>
+      <h2 class="section__title">Triage is the job I've always done</h2>
+      <p class="section__intro">A SOC analyst sorts through noise, spots what's urgent, writes it down clearly, and hands it off at the right time. That's what a Navy corpsman does on a ship or in a clinic. Different patient, same discipline.</p>
+    </header>
+
+    <ol class="timeline">
+      <li>
+        <span class="timeline__when mono">2019 – present</span>
+        <h3>Warehouse Manager · Healthy Home 365</h3>
+        <p>Investigate operational discrepancies, document findings, coordinate corrective action, and escalate safety or equipment risks to leadership.</p>
+      </li>
+      <li>
+        <span class="timeline__when mono">2015 – 2018</span>
+        <h3>CPR / First Responder Instructor · U.S. Navy</h3>
+        <p>Delivered structured training, evaluated readiness, and kept accurate records across commands.</p>
+      </li>
+      <li>
+        <span class="timeline__when mono">2012 – 2015</span>
+        <h3>Medical Provider &amp; Cyber Awareness Petty Officer · USS Green Bay (LPD-20)</h3>
+        <p>Ran cybersecurity-awareness training for the medical department and kept the department at 100% training readiness on phishing, social engineering, passwords, and information handling.</p>
+      </li>
+      <li>
+        <span class="timeline__when mono">2009 – 2012</span>
+        <h3>Hospital Corpsman · U.S. Navy</h3>
+        <p>Medical support in Corpus Christi and Afghanistan. Protected sensitive records under strict privacy rules and made sound calls under pressure.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="wrap contact__box">
+    <p class="eyebrow mono">05 / escalate to hiring</p>
+    <h2 class="contact__title">Hiring for your SOC? Let's talk.</h2>
+    <p class="section__intro">Open to SOC Analyst L1, Junior SOC, Cyber Defense, and Incident Response roles in Dallas–Fort Worth or remote. Veteran-friendly and government/defense teams are a strong fit.</p>
+    <div class="contact__actions">
+      <a class="btn btn--primary btn--lg" href="assets/Dale_Dalida_SOC_Analyst_Resume.pdf" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14" /></svg>
+        Download resume (PDF)
+      </a>
+      <a class="btn btn--lg" href="https://www.linkedin.com/in/dale-dalida-b32309ab" target="_blank" rel="noopener">Message me on LinkedIn</a>
+      <a class="btn btn--lg" href="https://github.com/DaleDalida1" target="_blank" rel="noopener">Browse my GitHub</a>
+      <a class="btn btn--lg" href="https://tryhackme.com/p/MiniBambino" target="_blank" rel="noopener">TryHackMe profile</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__row mono">
+    <span>© 2026 Dale C. Dalida</span>
+    <span>U.S. Navy veteran · Anna, TX</span>
+  </div>
+</footer>
+
+</body>
+</html>
