@@ -5,7 +5,7 @@ Source code for my personal portfolio website, built to show recruiters and hiri
 ## What's on the site
 
 - Analyst profile, hiring signals (B.A.T. Cybersecurity, U.S. Navy HM2, former Secret clearance, Security+ in progress)
-- Case files: [Azure SOC & Honeynet](https://github.com/DaleDalida1/Azure-SOC), [Phishing Awareness Training](https://github.com/DaleDalida1/Cybersecurity-AwarenessTraining-phishing-), and academic IR / threat-hunting / ML projects
+- Case files: [Azure SOC & Honeynet](https://github.com/DaleDalida1/Azure-SOC), [Wazuh Home SOC Lab](https://github.com/DaleDalida1/wazuh-home-soc-lab), [Phishing Awareness Training](https://github.com/DaleDalida1/Cybersecurity-AwarenessTraining-phishing-), and academic IR / threat-hunting / ML projects
 - TryHackMe training log with stats, badges, and completed rooms ([profile](https://tryhackme.com/p/MiniBambino))
 - Toolkit, military and work background, and resume download
 

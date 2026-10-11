@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dale Dalida — SOC Analyst L1 | U.S. Navy Veteran</title>
-<meta name="description" content="Dale Dalida — entry-level SOC Analyst candidate in the DFW area. Azure Sentinel honeynet, phishing analysis, incident response, and 10 years of U.S. Navy triage experience.">
+<meta name="description" content="Dale Dalida — entry-level SOC Analyst candidate in the DFW area. Azure Sentinel honeynet, Wazuh home SOC lab, phishing analysis, incident response, and U.S. Navy triage experience.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1114'/%3E%3Cpath d='M9 7H6v18h3M23 7h3v18h-3' stroke='%2386d9a8' stroke-width='2.5' fill='none'/%3E%3Cpath d='M9 17h4l2-5 3 9 2-4h3' stroke='%23e8b64c' stroke-width='2' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
@@ -175,6 +175,22 @@
       <a class="link mono" href="https://github.com/DaleDalida1/Azure-SOC" target="_blank" rel="noopener">view repo → github.com/DaleDalida1/Azure-SOC</a>
     </article>
 
+    <article class="case case--wazuh" id="wazuh" aria-labelledby="wazuh-title">
+      <div class="case__meta mono">
+        <span class="tag">CASE-006</span>
+        <span class="tag tag--green">personal lab</span>
+        <time datetime="2026-10-11">Oct 11, 2026</time>
+      </div>
+      <h3 id="wazuh-title" class="case__title">Wazuh Home SOC Lab &amp; Alert Triage</h3>
+      <p>I built a three-VM VirtualBox lab with a Wazuh server and Windows 11 and Ubuntu endpoints. I collected Windows Security and Sysmon events plus Linux authentication logs, then validated three controlled scenarios: repeated failed SSH logins, a local administrator-group addition, and file modification and deletion.</p>
+      <p>I reviewed the raw alerts, matched the changed account's SID, checked file-content and hash changes, and documented the verdicts and cleanup. The repo includes three incident-style write-ups, four alert JSON records, screenshots, and a network diagram. These were authorized lab tests, not production incidents.</p>
+      <ul class="chips" aria-label="Wazuh lab skills used"><li>Wazuh SIEM</li><li>Sysmon</li><li>Windows event 4732</li><li>SSH / PAM</li><li>File integrity monitoring</li><li>Alert triage</li></ul>
+      <div class="case__links">
+        <a class="link mono" href="https://github.com/DaleDalida1/wazuh-home-soc-lab" target="_blank" rel="noopener">view Wazuh repo →</a>
+        <a class="link mono" href="https://github.com/DaleDalida1/wazuh-home-soc-lab/blob/main/docs/incident-writeups.md" target="_blank" rel="noopener">read incident write-ups →</a>
+      </div>
+    </article>
+
     <div class="cases">
       <article class="case">
         <div class="case__meta mono"><span class="tag">CASE-002</span><span class="tag tag--green">build</span><span>2026</span></div>
@@ -297,7 +313,7 @@
     </header>
     <div class="kit">
       <div class="kit__group"><h3 class="mono">Security operations</h3><p>Alert triage · log analysis · incident classification · escalation notes · case documentation · evidence preservation</p></div>
-      <div class="kit__group"><h3 class="mono">SIEM &amp; detection</h3><p>Microsoft Sentinel · Log Analytics · KQL · Microsoft Defender · Windows Security Events · Linux Syslog · IOC analysis</p></div>
+      <div class="kit__group"><h3 class="mono">SIEM &amp; detection</h3><p>Microsoft Sentinel · Wazuh · Sysmon · Log Analytics · KQL · Microsoft Defender · Windows Security Events · Linux Syslog · IOC analysis</p></div>
       <div class="kit__group"><h3 class="mono">Network &amp; endpoint</h3><p>Wireshark · packet capture · Nmap / NSE · TCP/IP · DNS · HTTP/S · SMB · Windows · Linux</p></div>
       <div class="kit__group"><h3 class="mono">Cloud</h3><p>Azure VNets, NSGs, Key Vault, Storage, private endpoints · AWS/Azure IAM and CloudTrail concepts</p></div>
       <div class="kit__group"><h3 class="mono">Frameworks</h3><p>MITRE ATT&amp;CK · NIST SP 800-61 · NIST CSF · ISO/IEC 27035 · HIPAA and PHI/PII handling</p></div>
